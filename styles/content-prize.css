@@ -1,0 +1,176 @@
+.content-prize{
+    max-width: 30.12rem;
+
+    & h2{
+        color: var(--ct-primary);
+        font: var(--lb-md);
+    }
+
+    & p{
+        font: var(--pg-lg);
+        color: var(--ct-secondary);
+    }
+
+    & .form-prize{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: .75rem;
+        & .numbers{
+            margin-top: 2.5rem;
+            margin-bottom: 1.25rem;
+
+            & label{
+                display: block;
+                margin-bottom: .5rem;
+                text-align: center;
+                color: var(--ct-secondary) ;
+                font: var(--lb-sm);
+                transition: color 0.3s ease;
+            }
+
+            & input {
+                width: 5.37rem;
+                height: 3.5rem;
+                text-align: center;
+                font: var(--dp-sm);
+                color: var(--ct-secondary) ;
+                background-color: var(--bg-secondary);
+                border: none;
+                border-radius: .5rem;
+                position: relative;
+                z-index: 1;
+                
+                transition: background-color 0.3s ease-in-out, outline 0.3s ease-in-out;
+
+                &:hover,
+                &:focus {
+                    background-color: var(--bg-tertiary);
+                    outline: 2px solid;
+                    border-image: linear-gradient(90deg, 
+                    #77C0AF 0%, 
+                    #D1DC97 14.84%, 
+                    #E9A9B3 32.15%, 
+                    #D586E0 65.79%, 
+                    #91A1FA 84.58%) 1;
+                    outline-offset: 2px;
+                   
+                }
+               
+            }
+
+        }
+
+    }
+
+    & .input-group{
+        display: flex;
+
+        & label:nth-child(2){
+            font: var(--pg-sm);
+            color: var(--ct-primary);
+        }
+
+    }
+
+    & button{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: .5rem;
+        margin-top: 2.5rem;
+        width: 100%;
+        padding-block: 1rem;
+        background-color: var(--bg-tertiary);
+        border-radius: .5rem;
+        border: 1px solid transparent;
+        background-clip: padding-box;
+        position: relative;
+        color: var(--ct-primary);
+        font: var(--lb-md);
+        transition: border 0.3s ease;
+        cursor: pointer;
+        
+        &:hover {
+            border-image: linear-gradient(270deg, 
+                #77C0AF 0%, 
+                #D1DC97 14.84%, 
+                #E9A9B3 32.15%, 
+                #D586E0 65.79%, 
+                #91A1FA 84.58%) 1;
+            animation: moveGradient 2s infinite; /* Inicia a animação */
+    
+            & img {
+                animation: moveX 1s ease-in-out;
+            }
+        }
+
+    }
+    
+}
+
+@keyframes moveGradient {
+    0% {
+        border-image: linear-gradient(90deg, 
+                    #77C0AF 0%, 
+                    #D1DC97 14.84%, 
+                    #E9A9B3 32.15%, 
+                    #D586E0 65.79%, 
+                    #91A1FA 84.58%) 1;
+    }
+    50% {
+        border-image: linear-gradient(180deg, 
+                    #77C0AF 0%, 
+                    #D1DC97 14.84%, 
+                    #E9A9B3 32.15%, 
+                    #D586E0 65.79%, 
+                    #91A1FA 84.58%) 1;
+    }
+    100% {
+        border-image: linear-gradient(270deg, 
+                    #77C0AF 0%, 
+                    #D1DC97 14.84%, 
+                    #E9A9B3 32.15%, 
+                    #D586E0 65.79%, 
+                    #91A1FA 84.58%) 1;
+    }
+}
+
+@keyframes moveX {
+    0% {
+        transform: translateX(0); 
+    }
+    50% {
+        transform: translateX(5px); 
+    }
+    75% {
+        transform: translateX(8px); 
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+
+@media(width <= 25em){
+    .content-prize{
+        width: 19.93rem;
+
+        & h2{
+            font: 700 1.25rem/150% var(--ff-roboto-flex);
+        }
+        & p{
+            font: var(--pg-md);
+        }
+
+        & .form-prize{
+            & .numbers{
+                & label{
+                    font: var(--lb-sm)
+                    
+                }
+            }
+
+        }
+    }
+}

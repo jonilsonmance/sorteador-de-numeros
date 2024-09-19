@@ -1,0 +1,150 @@
+.tempory{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+    width: 30.12rem;
+
+    & header{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: .25rem;
+
+        & h1{
+            font: var(--lb-md);
+            color: var(--ct-primary);
+        }
+        & p{
+            font: var(--overline);
+            color: var(--ct-secondary);
+        }
+    }
+
+    & .drawer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+
+        & .primary,
+         .secondary{
+            width: 5.25rem;
+            height: 6.25rem;
+            background: var(--ct-brand);
+            padding: 1.12rem 1.37rem;
+            border-radius: 1.75rem;
+            display: grid;
+            place-content: center;
+            font: 700 4rem/150% var(--ff-roboto-mono);
+            color: var(--color-inverse);
+            opacity: 0;
+            transform: scale(0);
+            animation: appear 0.5s ease-in-out forwards, rotate 1s 0.5s ease-in-out forwards, change-bg-color 1.5s 1.5s ease-in-out forwards;
+        }
+        & .secondary {
+            animation: appear 0.5s 2.5s ease-in-out forwards, rotate 1s 3.5s ease-in-out forwards, change-bg-color 1.5s 4.5s ease-in-out forwards;
+        }
+    }
+
+    & button{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: .5rem;
+        margin-top: 2.5rem;
+        width: 100%;
+        padding-block: .5rem;
+        background-color: var(--bg-tertiary);
+        border-radius: .5rem;
+        border: 1px solid transparent;
+        background-clip: padding-box;
+        position: relative;
+        color: var(--ct-primary);
+        font: var(--lb-md);
+        transition: border 0.3s ease;
+        cursor: pointer;
+      
+        &:hover {
+            border-image: linear-gradient(270deg, 
+                #77C0AF 0%, 
+                #D1DC97 14.84%, 
+                #E9A9B3 32.15%, 
+                #D586E0 65.79%, 
+                #91A1FA 84.58%) 1;
+            animation: moveGradient 2s infinite; 
+    
+            & img {
+                transform: rotate(360deg); 
+                transition: transform 2s ease;
+            }
+        }
+
+    }    
+    
+}
+
+@keyframes moveGradient {
+    0% {
+        border-image: linear-gradient(90deg, 
+            #77C0AF 0%, 
+            #D1DC97 14.84%, 
+            #E9A9B3 32.15%, 
+            #D586E0 65.79%, 
+            #91A1FA 84.58%) 1;
+    }
+    50% {
+        border-image: linear-gradient(180deg, 
+            #77C0AF 0%, 
+            #D1DC97 14.84%, 
+            #E9A9B3 32.15%, 
+            #D586E0 65.79%, 
+            #91A1FA 84.58%) 1;
+    }
+    100% {
+        border-image: linear-gradient(270deg, 
+            #77C0AF 0%, 
+            #D1DC97 14.84%, 
+            #E9A9B3 32.15%, 
+            #D586E0 65.79%, 
+            #91A1FA 84.58%) 1;
+    }
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);  
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes change-bg-color {
+    0% {
+        background-color: var(--ct-brand);
+        color: var(--color-inverse);
+    }
+    100% {
+        background-color: transparent;
+        color: var(--ct-brand);
+    }
+}
+
+@media(width <= 25em){
+    .tempory{
+        width: 19.9rem;
+    }
+}

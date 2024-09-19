@@ -1,0 +1,10 @@
+.mobile-only{
+    display: none;
+}
+
+@media (width <= 25em){
+    .mobile-only{
+        display: block;
+        margin-bottom: 2.75rem;
+    }
+}

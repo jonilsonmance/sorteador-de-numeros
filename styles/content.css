@@ -1,0 +1,61 @@
+.content{
+    max-width: 32.75rem;
+    
+    & .header{
+        font: var(--overline);
+        background: linear-gradient(90deg, #C7C9CC 0%, #3D3D3D 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    & h1{
+        font: var(--dp-lg);
+        background: linear-gradient(90deg, #66DEFF 0%, #7566FF 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 2.37rem;
+    }
+
+    .questions{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 2.25rem;
+        max-width: 24.12rem;
+        
+        & .items{
+            display: flex;
+            align-items: start;
+            gap: .5rem;
+            & p{
+                font: var(--pg-sm);
+                color: var(--ct-secondary);
+
+                & a{
+                    list-style: none;
+                    text-decoration: none;
+                    font: var(--pg-md);
+                    color: var(--ct-brand);
+                }
+            }
+
+        }
+
+    }
+}
+
+@media (width <= 25em){
+    
+   .content{
+      width: 19.93rem;
+      & h1{
+        font: var(--dp-md);
+        margin-bottom: 0;
+      }
+
+      .desktop-only {
+        display: none; 
+      }
+
+    }
+}
